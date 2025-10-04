@@ -84,15 +84,5 @@ export const languages: Language[] = [
     description: "A shiny programming language designed for building quick scripts with readable syntax.",
     discord: "https://discord.gg/jrwxVAsQDv",
     github: "https://github.com/ddededodediamante/ddehighlight"
-  },
-  {
-    name: "OSL",
-    slug: "osl",
-    tagline: "A dynamic and unique rendering and scripting language",
-    logo: "/logos/osl.png",
-    description: "OSL is a dynamic runtime, procedural rendering and general purpose scripting language with optional weak static type enforcement.",
-    website: "https://mistium.com",
-    discord: "http://discord.gg/ReyzwPx2g9",
-    github: "https://github.com/Mistium/Origin-OS"
   }
 ];
