@@ -33,12 +33,12 @@ export const languages: Language[] = [
      github: "https://github.com/XFydro/x3",
   },
   {
-    name: "Ranger",
-    slug: "ranger",
+    name: "Summit",
+    slug: "summit",
     tagline: "No clue either",
-    logo: "/logos/ranger.png",
+    logo: "/logos/summit.png",
     description:
-      "Ranger is a high-level language that does weird stuff with ASTs. We think. Ask its creator.",
+    "Summit is a high-level language that does weird stuff with ASTs. We think. Ask its creator.",
   },
   {
     name: "ROS",
