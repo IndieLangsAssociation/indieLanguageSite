@@ -84,5 +84,14 @@ export const languages: Language[] = [
     description: "A shiny programming language designed for building quick scripts with readable syntax.",
     discord: "https://discord.gg/jrwxVAsQDv",
     github: "https://github.com/ddededodediamante/ddehighlight"
+  },
+  {
+    name: "CM2L",
+    slug: "cm2l",
+    tagline: "Designed to run on all CPU's",
+    logo: "/logos/cm2l.png",
+    description: "A language designed to be ported to all CPU archs",
+    discord: "https://discord.gg/zPwp6zJNTV",
+    github: "https://github.com/Qxtdl/cm2lang"
   }
 ];
