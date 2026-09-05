@@ -118,5 +118,12 @@ export const languages: Language[] = [
   tagline: "letters? i hardLY know 'em!",
   logo: "/logos/byplus.png",
   description: "by+, probably one of the only esolangs to have emojis as commands! it is only interpreted, and it has been only ran on ROBOT IS CHILL, and due to the hard nature of emojis, is hard to port to other languages"
+},
+{
+  name: "CL#",
+  slug: "clash",
+  tagline: "it certainly exists",
+  logo: "/logos/clash.png",
+  description: "CL# (aka Coding Language Hash, or Clash) is a somewhat stack-oriented language inspired by Uiua and similar languages"
 }
 ];
