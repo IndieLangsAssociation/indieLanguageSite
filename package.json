@@ -1,36 +1,39 @@
 {
-  "name": "indiedevsite",
+  "name": "indielangs",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite dev",
+    "build": "npm run schema && vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "schema": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/gen-schema.ts",
+    "validate": "node --experimental-strip-types --disable-warning=ExperimentalWarning scripts/validate.ts"
   },
   "dependencies": {
-    "codemirror": "^6.0.2",
-    "framer-motion": "^12.23.12",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-helmet": "^6.1.0",
-    "react-router-dom": "^7.7.1",
-    "react-transition-group": "^4.4.5",
-    "sweetalert2": "^11.22.2"
+    "@codemirror/commands": "^6.8.1",
+    "@codemirror/language": "^6.11.0",
+    "@codemirror/legacy-modes": "^6.5.1",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.5",
+    "@fontsource-variable/bricolage-grotesque": "^5.2.5",
+    "@fontsource-variable/martian-mono": "^5.2.5",
+    "@lezer/highlight": "^1.2.1",
+    "js-yaml": "^4.1.0",
+    "marked": "^15.0.7",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@eslint/js": "^9.30.1",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "@types/react-transition-group": "^4.4.12",
-    "@vitejs/plugin-react": "^4.6.0",
-    "eslint": "^9.30.1",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.35.1",
-    "vite": "^7.0.4"
+    "@sveltejs/adapter-static": "^3.0.8",
+    "@sveltejs/enhanced-img": "^0.4.4",
+    "@sveltejs/kit": "^2.20.2",
+    "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "@types/js-yaml": "^4.0.9",
+    "svelte": "^5.25.3",
+    "svelte-check": "^4.1.5",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.3",
+    "zod-to-json-schema": "^3.24.5"
   }
 }

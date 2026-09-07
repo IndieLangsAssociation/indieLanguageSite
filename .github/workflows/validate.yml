@@ -1,0 +1,36 @@
+name: Validate
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# A submission that fails here can't reach master. The site has been broken by
+# a merged pull request before; this is the check that would have caught it.
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check every language file
+        run: npm run validate
+
+      - name: Check the schema is up to date
+        run: |
+          npm run schema
+          if ! git diff --quiet -- src/content/language.schema.json; then
+            echo "::error file=src/content/language.schema.json::The generated schema is stale. Run 'npm run schema' and commit the result."
+            git diff -- src/content/language.schema.json
+            exit 1
+          fi
+
+      - name: Build the site
+        run: npm run build

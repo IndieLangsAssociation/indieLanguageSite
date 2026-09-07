@@ -1,0 +1,145 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "indie langs language entry",
+	"description": "Generated from src/lib/content/schema.ts — do not edit by hand.",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 40
+		},
+		"tagline": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 120
+		},
+		"description": {
+			"type": "string",
+			"minLength": 20,
+			"maxLength": 700
+		},
+		"tags": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"enum": [
+					"esolang",
+					"toy",
+					"beginner-friendly",
+					"scripting",
+					"systems",
+					"interpreted",
+					"compiled",
+					"transpiled",
+					"jit",
+					"stack-based",
+					"concatenative",
+					"functional",
+					"object-oriented",
+					"visual",
+					"golfing",
+					"self-hosting",
+					"experimental"
+				]
+			},
+			"maxItems": 5
+		},
+		"by": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string",
+					"minLength": 1,
+					"maxLength": 60
+				},
+				"github": {
+					"type": "string",
+					"pattern": "^[A-Za-z\\d](?:[A-Za-z\\d]|-(?=[A-Za-z\\d])){0,38}$"
+				},
+				"url": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 300
+				}
+			},
+			"required": [
+				"name"
+			],
+			"additionalProperties": false
+		},
+		"links": {
+			"type": "object",
+			"properties": {
+				"website": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 300
+				},
+				"github": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 300
+				},
+				"discord": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 300
+				}
+			},
+			"additionalProperties": false
+		},
+		"sample": {
+			"type": "string",
+			"maxLength": 2000
+		},
+		"highlight": {
+			"type": "string",
+			"enum": [
+				"plain",
+				"x3",
+				"ruby",
+				"clike",
+				"python",
+				"wsharp"
+			]
+		},
+		"logoFit": {
+			"type": "string",
+			"enum": [
+				"contain",
+				"fill"
+			]
+		},
+		"repl": {
+			"type": "object",
+			"properties": {
+				"endpoint": {
+					"type": "string",
+					"format": "uri",
+					"maxLength": 300
+				},
+				"filename": {
+					"type": "string",
+					"pattern": "^[\\w.-]+$",
+					"maxLength": 40
+				},
+				"starter": {
+					"type": "string",
+					"maxLength": 2000
+				}
+			},
+			"required": [
+				"endpoint",
+				"filename"
+			],
+			"additionalProperties": false
+		}
+	},
+	"required": [
+		"name",
+		"tagline",
+		"description"
+	],
+	"additionalProperties": false
+}

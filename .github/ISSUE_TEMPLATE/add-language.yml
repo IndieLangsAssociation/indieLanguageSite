@@ -1,0 +1,116 @@
+name: Add my language
+description: Get your language listed without touching git. Fill this in and a maintainer will open the pull request.
+title: 'Add <your language> to the site'
+labels: [new language]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Prefer to do it yourself? [CONTRIBUTING.md](https://github.com/IndieLangsAssociation/indieLanguageSite/blob/master/CONTRIBUTING.md)
+        walks through it — one folder, two files, one pull request.
+
+  - type: input
+    id: name
+    attributes:
+      label: Language name
+      description: How it should appear on the site.
+      placeholder: ExampleLang
+    validations:
+      required: true
+
+  - type: input
+    id: slug
+    attributes:
+      label: URL name
+      description: Becomes indielangs.org/language/… — lowercase letters, digits and hyphens only.
+      placeholder: examplelang
+    validations:
+      required: true
+
+  - type: input
+    id: tagline
+    attributes:
+      label: Tagline
+      description: One line, shown under your name on the front page. Short is better.
+      placeholder: A language for people who like semicolons too much
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A paragraph about what it is and why you made it.
+    validations:
+      required: true
+
+  - type: textarea
+    id: sample
+    attributes:
+      label: A few lines of your syntax
+      description: >-
+        One line of this shows up next to your language on the front page. It tells people
+        more about your language than a paragraph does, so it's worth filling in.
+      render: text
+
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      placeholder: https://example.com
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repository
+      placeholder: https://github.com/you/examplelang
+
+  - type: input
+    id: discord
+    attributes:
+      label: Discord invite
+      placeholder: https://discord.gg/example
+
+  - type: input
+    id: author
+    attributes:
+      label: Your name
+      description: How you want to be credited on your language's page.
+
+  - type: input
+    id: author_github
+    attributes:
+      label: Your GitHub username
+      description: Just the username, not a URL.
+      placeholder: your-username
+
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: Tags
+      description: Pick up to five. These drive the filters on the front page.
+      options:
+        - label: esolang
+        - label: toy
+        - label: beginner-friendly
+        - label: scripting
+        - label: systems
+        - label: interpreted
+        - label: compiled
+        - label: transpiled
+        - label: jit
+        - label: stack-based
+        - label: concatenative
+        - label: functional
+        - label: object-oriented
+        - label: visual
+        - label: golfing
+        - label: self-hosting
+        - label: experimental
+
+  - type: markdown
+    attributes:
+      value: |
+        **Logo** — drag the image file into the comment box below after you open this issue.
+        Any reasonable size works, under 300 KB. No logo is fine too; your page will show
+        your language's initial instead.

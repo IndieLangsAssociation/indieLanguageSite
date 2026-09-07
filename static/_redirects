@@ -1,0 +1,5 @@
+# The Ulang page was retired in the 2026 rebuild.
+/ulang    /    301
+
+# Old logo paths, in case anything out there hotlinked them.
+/logos/*  /    301

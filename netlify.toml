@@ -1,0 +1,14 @@
+# The rebuild changed the output directory from Vite's `dist` to SvelteKit's
+# `build`. Keeping it here means the repo configures its own deploy rather than
+# depending on settings in the Netlify dashboard.
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[headers]]
+  for = "/_app/immutable/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"

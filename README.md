@@ -1,92 +1,50 @@
-# 🌐 Add Your Language to [indielangs.org](https://indielangs.org)
+# indielangs.org
 
-Hey there, indie language creator! 👋  
-Thanks for choosing to showcase your language on **indielangs.org** — the community hub for experimental, chaotic, powerful, and fun programming languages.
+A directory of indie programming languages — the ones people build by hand because they
+wanted to build a language.
 
-Follow this quick guide to get your language listed! 💻🚀
+**[Add yours →](CONTRIBUTING.md)**
 
----
+## How it works
 
-## 🛠️ Step 1: Fork the Repository
+Every language is a folder in `src/content/languages/`, containing an `index.md` and a
+logo. The folder name is the URL. Nothing outside that folder needs to change to add,
+update, or remove a language, so submissions never conflict with each other.
 
-Click the `Fork` button at the top right of this repo and clone it locally:
+```txt
+src/content/languages/x3/
+├── index.md      # schema-validated frontmatter + optional Markdown body
+└── logo.png      # found by name; any reasonable size
+```
 
-```bash
-git clone https://github.com/IndieLangsAssociation/indieLanguageSite
-cd indieLanguageSite
-````
+Frontmatter is validated by [a Zod schema](src/lib/content/schema.ts) at build time and on
+every pull request. `src/content/language.schema.json` is generated from it, which is what
+gives contributors autocomplete and inline errors in their editor — including the GitHub
+web editor.
 
-## 📥 Step 2: Install Dependencies
-
-Install dependancies like vite for easier development
+## Running it
 
 ```bash
 npm ci
+npm run dev        # http://localhost:5173
 ```
 
----
+| | |
+|---|---|
+| `npm run dev` | development server |
+| `npm run build` | prerender the whole site to `build/` |
+| `npm run preview` | serve the built site |
+| `npm run validate` | check every language file — same check CI runs |
+| `npm run schema` | regenerate `language.schema.json` after editing the Zod schema |
+| `npm run check` | type-check |
 
-## 📦 Step 3: Add Your Language Metadata
+SvelteKit with `adapter-static`; the output is a folder of HTML files with no server.
 
-Open the file:
+## Contributing
 
-```txt
-src/data/languagesData.ts
-```
+[CONTRIBUTING.md](CONTRIBUTING.md) covers adding a language. For anything else — a bug, a
+design change, a new field on the schema — open an issue first so we can talk about it.
 
-Then, add a new object to the exported array like this:
+## Licence
 
-```ts
-{
-  name: "ExampleLang", // Display name (required)
-  slug: "examplelang", // URL-friendly identifier, lowercase & no spaces (required)
-  tagline: "this is an example", // Short and catchy (required)
-  logo: "/logos/examplelang.png", // Path to logo file (required)
-  description: "this is an example to show how to add a language to indielangs.org", // Full description (required)
-  website: "https://example.com", // Optional but recommended
-  discord: "https://discord.gg/example", // Optional
-  github: "https://github.com/example/examplelang", // Optional
-},
-```
-
-✅ **Required Fields:** `name`, `slug`, `tagline`, `logo`, `description`
-ℹ️ *Optional Fields:* `website`, `discord`, `github`
-
----
-
-## 🖼️ Step 4: Add Your Logo
-
-Place your logo in:
-
-```txt
-public/logos/
-```
-
-Supported formats: `.webp` (preferred), `.png`, `.jpg`, etc.
-🖼️ **Tip:** Use `.webp` for smaller file size and better SEO!
-
----
-
-## 🧪 Step 5: Test
-
-Start the local webserver with vite to check your changes
-
-```bash
-npm run dev
-```
-
-## 📤 Step 6: Submit a Pull Request
-
-Once you've added your language, create a Pull Request (PR) to submit your changes.
-
-We’ll review it and either approve ✅ or request changes 🔁 with helpful feedback.
-
----
-
-## 💬 Questions?
-
-Feel free to [open an issue](https://github.com/IndieLangsAssociation/indieLanguageSite) or join our [Discord](https://discord.gg/UvMZrQaMZ2) if you’re unsure about anything!
-
----
-
-🎉 That’s it — welcome to the indie language crew!
+[MIT](LICENSE). Language names, logos, and descriptions belong to the people who made them.
